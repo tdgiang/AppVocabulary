@@ -1,11 +1,8 @@
 import AsyncStorage from '@react-native-community/async-storage';
 
-export default setAsyncStorage=async(key,arr)=>{
+export default setAsyncStorage=async(arr)=>{
     try {
-        await AsyncStorage.setItem(key,JSON.stringify(arr));
-
-        
-        
+        await AsyncStorage.setItem('arrWords1',JSON.stringify(arr));
     } catch (error) {
         console.log(error);
         

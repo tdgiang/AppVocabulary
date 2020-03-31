@@ -7,7 +7,6 @@ export default  getAsyncStorage=async(key)=>{
             {  
                 return JSON.parse(arrWord);
             }
-                
             return [];
             
         } catch (error) {

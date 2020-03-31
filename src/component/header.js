@@ -6,7 +6,7 @@ import {
     Image,
     Modal
  } from 'react-native';
- import {connect} from 'react-redux';
+import {connect} from 'react-redux';
 import styles from '../styles/styles';
 import {ShowIsAdding} from '../redux/actionCreators';
 import Form from './form';

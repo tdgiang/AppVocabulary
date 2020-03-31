@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { 
     View,
-    Text,
     FlatList
  } from 'react-native';
 import {connect} from 'react-redux';
@@ -23,7 +22,7 @@ class Main extends Component {
 
     }
     getInitData=async()=>{
-        const data=await getAsyncStorage('arrWords');
+        const data=await getAsyncStorage('arrWords1');
         this.props.initData(data);
        
     }

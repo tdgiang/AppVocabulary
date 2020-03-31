@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { 
     View,
     Text,
@@ -10,10 +10,13 @@ import {connect} from 'react-redux';
 import styles from '../styles/styles';
 import {showWord,memorizedWord} from '../redux/actionCreators';
 import  setAsyncStorage from '../func/setAsyncStotage';
+
+
 const ok=require('../img/icons/ok.png');
 const eye=require('../img/icons/eye.png');
 const replay=require('../img/icons/replay.png');
 const eyeClose=require('../img/icons/closeEye.png');
+
 class Word extends Component {
 
     constructor(props){
@@ -24,17 +27,17 @@ class Word extends Component {
     }
 
     UNSAFE_componentWillMount (){ 
-        setAsyncStorage('arrWords',this.props.arrWords);
+        setAsyncStorage(this.props.arrWords);
     }
 
     toggleMemorized=async(id)=>{
         await this.props.memorizedWord(id);
-        setAsyncStorage('arrWords',this.props.arrWords);
+        setAsyncStorage(this.props.arrWords);
     }
 
     toggleShow=async(id)=>{
         await this.props.showWord(id);
-        setAsyncStorage('arrWords',this.props.arrWords);
+        setAsyncStorage(this.props.arrWords);
     }
 
     componentDidMount(){
@@ -53,7 +56,7 @@ class Word extends Component {
     render() {
         const {container,row,border,imgIcon,txtWord}=styles;
         const {en,vn,memorized,isShow,id}=this.props.word;
-        const iconMemorized=memorized?ok:replay;
+        const iconMemorized=memorized?replay:ok;
         const iconShow=isShow?eye:eyeClose;
         const txtShow=isShow?vn:"--------";
         const {animOpacity}=this.state;

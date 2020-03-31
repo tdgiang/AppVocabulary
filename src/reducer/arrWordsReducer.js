@@ -1,21 +1,3 @@
-import  getAsyncStorage from '../func/getAsyncStorage';
-
-
-
-
-const initData=async()=>{
-    const data=await getAsyncStorage('arrWords');
-    console.log("data trong init:");
-    console.log(data);
-    if(data!=null)
-        return data;
-    return [];
-} 
-
-const test=[
-    { id: '3', en: 'activity', vn: 'hoạt động', memorized: true, isShow: true }
-]
-
 
 const arrWordsReducer=(state=[],action)=>{
     switch (action.type) {
